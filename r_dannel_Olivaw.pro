@@ -1,1 +1,4 @@
 :-)
+
+SOURCES += \
+    main.cpp
