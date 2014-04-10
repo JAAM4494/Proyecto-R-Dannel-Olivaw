@@ -6,5 +6,6 @@
 
 SOURCES += \
     main.cpp \
-    Prueba.cpp
+    Prueba.cpp \
+    Test2.cpp
 
