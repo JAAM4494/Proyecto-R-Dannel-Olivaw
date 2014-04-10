@@ -7,5 +7,6 @@
 SOURCES += \
     main.cpp \
     Prueba.cpp \
-    Test2.cpp
+    Test2.cpp \
+    misnalgas.cpp
 
