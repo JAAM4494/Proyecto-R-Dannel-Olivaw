@@ -6,7 +6,14 @@
 
 SOURCES += \
     main.cpp \
-    Prueba.cpp \
-    Test2.cpp \
-    misnalgas.cpp
+    individuo.cpp \
+    poblacion.cpp \
+    evolucion.cpp \
+    reproduccion.cpp
+
+HEADERS += \
+    individuo.h \
+    poblacion.h \
+    evolucion.h \
+    reproduccion.h
 

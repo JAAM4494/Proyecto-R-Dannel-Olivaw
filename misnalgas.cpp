@@ -1,6 +1,0 @@
-
-//jaja
-void move()
-{
-
-}
