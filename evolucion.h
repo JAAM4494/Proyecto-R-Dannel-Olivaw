@@ -1,10 +1,14 @@
 #ifndef EVOLUCION_H
 #define EVOLUCION_H
+#include "individuo.h"
+#include "cmath"
 
-class evolucion
+class Evolucion
 {
 public:
-    evolucion();
+    Evolucion();
+private:
+    void calcularFuncionNormal(Individuo * pIndividuo);
 };
 
 #endif // EVOLUCION_H
