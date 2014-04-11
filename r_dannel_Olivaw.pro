@@ -9,7 +9,8 @@ SOURCES += \
     poblacion.cpp \
     evolucion.cpp \
     reproduccion.cpp \
-    mainGenetico.cpp
+    mainGenetico.cpp \
+    MainWindow.cpp
 
 HEADERS += \
     individuo.h \
