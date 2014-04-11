@@ -59,5 +59,5 @@ void Individuo::setGeneracion(int pGeneracion){
 
 void Individuo::imprimir()
 {
-    printf("Individuo id= %d, Generacion %d, Padre=%d, Madre=%d, Cromosoma=%u, fitness=%f\n",this->_id, this->_generacion, this->_padre, this->_madre, this->_cromosoma, this->_valorFitness);
+    printf("Individuo id= %d, Generacion %d, Padre=%d, Madre=%d, Cromosoma=%hu, fitness=%f\n",this->_id, this->_generacion, this->_padre, this->_madre, this->_cromosoma, this->_valorFitness);
 }

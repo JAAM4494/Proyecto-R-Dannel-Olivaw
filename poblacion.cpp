@@ -179,7 +179,7 @@ void Poblacion::imprimirMejor(){
             mejor = tmp;
         tmp = tmp->getSiguiente();
     }
-    printf("Mejor Individuo id %d, Generacion %d, fitness %f, cromosoma %d\n",mejor->getId(), mejor->getGeneracion(),mejor->getFitness(), mejor->getCromosoma());
+    printf("Mejor Individuo id %d, Generacion %d, fitness %f, cromosoma %hu\n",mejor->getId(), mejor->getGeneracion(),mejor->getFitness(), mejor->getCromosoma());
 }
 
 void Poblacion::imprimirPoblacion(){

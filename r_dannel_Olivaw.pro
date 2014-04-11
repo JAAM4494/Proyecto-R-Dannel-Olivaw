@@ -5,11 +5,11 @@
 #-------------------------------------------------
 
 SOURCES += \
-    main.cpp \
     individuo.cpp \
     poblacion.cpp \
     evolucion.cpp \
-    reproduccion.cpp
+    reproduccion.cpp \
+    mainGenetico.cpp
 
 HEADERS += \
     individuo.h \

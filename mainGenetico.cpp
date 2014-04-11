@@ -5,6 +5,7 @@
 #include "cmath"
 #include "evolucion.h"
 #include "poblacion.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
     Poblacion *yy=new Poblacion(50,25,50,false);
     yy->inicializar();
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 15; i++)
     {
         yy->aplicarFitness(x);
         yy->imprimirPoblacion();
