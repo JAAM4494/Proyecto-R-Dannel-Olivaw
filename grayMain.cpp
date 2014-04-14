@@ -7,10 +7,10 @@ using namespace cv;
 int main( int argc, char** argv )
 {
     // argv[1] - where the image is located
-    char* imagePath = "/home/elda/Desktop/imagen.png";
+    char* imagePath = argv[1];
 
     // create a MAT object for input image
-    Mat image;
+    CvMat image;
 
     // load an image
     image = imread( imagePath, 1 );
@@ -22,7 +22,7 @@ int main( int argc, char** argv )
 //    }
 
     // create a MAT object for gray image
-    Mat gray_image;
+    CvMat gray_image;
 
     // convert to Greyscale format
     // cvtColor( image, gray_image, CV_BGR2GRAY );

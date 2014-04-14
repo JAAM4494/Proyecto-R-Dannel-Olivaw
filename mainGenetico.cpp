@@ -21,6 +21,8 @@
 //        yy->imprimirPoblacion();
 //        yy->nuevaGeneracion(x);
 //    }
+//    delete x;
+//    delete yy;
 
 //    return 0;
 //}

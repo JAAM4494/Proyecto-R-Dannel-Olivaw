@@ -21,3 +21,6 @@ HEADERS += \
 
 LIBS += \
     `pkg-config --libs --cflags opencv`
+
+OTHER_FILES += \
+    imagen_color.jpeg

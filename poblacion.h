@@ -13,6 +13,7 @@ class Poblacion
 public:
     Poblacion(int pTamanoPoblacion, int pMaxNacimientos,
               short pProbabilidadNacimientos, bool pReemplazoPoblacion );
+    ~Poblacion();
     void inicializar(); // genera una poblacion aleatoria, la cual llamaremos generacion 0
     void nuevaGeneracion(Reproduccion *rep);// genera una nueva generacion
     void aplicarFitness(Reproduccion *rep);

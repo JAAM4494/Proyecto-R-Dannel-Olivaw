@@ -22,11 +22,28 @@ Poblacion::Poblacion(int pTamanoPoblacion, int pMaxNacimientos,
 
 }
 
-void Poblacion::inicializar(){
+Poblacion::~Poblacion()
+{
+    if(this->_poblacion)
+    {
+        Individuo * _Current = this->_poblacion;
+        Individuo * _TmpPtr;
+
+        while(_Current != 0)
+        {
+            _TmpPtr = _Current;
+            _Current = _Current->getSiguiente();
+            delete _TmpPtr;
+        }
+    }
+}
+
+void Poblacion::inicializar()
+{
     this->_poblacion = new Individuo(this->_counter,rand());
-    for(int i=1;i<this->_tamanoPoblacion;i++){
+    for(int i=1;i<this->_tamanoPoblacion;i++)
+    {
         this->_counter++;
-        ;
         unsigned short cromosoma=rand()/65535;
         Individuo *tmp = new Individuo(this->_counter,cromosoma);
         tmp->setSiguiente(this->_poblacion);
@@ -153,7 +170,8 @@ void Poblacion::mezclarPoblacion(Individuo *pNuevaGeneracion){
 
     //int tmp =0;
     while(debilGeneracionActual->getFitness() <
-          fuerteNuevaGeneracion->getFitness()){
+          fuerteNuevaGeneracion->getFitness())
+    {
        // qDebug()<<"Bongo **************************\n";
         this->cambiarIndividuos(debilGeneracionActual,fuerteNuevaGeneracion);
         //qDebug()<<"Bongo **************************\n";
