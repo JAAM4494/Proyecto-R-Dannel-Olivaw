@@ -10,7 +10,8 @@ SOURCES += \
     evolucion.cpp \
     reproduccion.cpp \
     mainGenetico.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    grayMain.cpp
 
 HEADERS += \
     individuo.h \
@@ -18,3 +19,5 @@ HEADERS += \
     evolucion.h \
     reproduccion.h
 
+LIBS += \
+    `pkg-config --libs --cflags opencv`
