@@ -11,16 +11,21 @@ SOURCES += \
     reproduccion.cpp \
     mainGenetico.cpp \
     MainWindow.cpp \
-    grayMain.cpp
+    grayMain.cpp \
+    ball.cpp \
+    moveball.cpp
 
 HEADERS += \
     individuo.h \
     poblacion.h \
     evolucion.h \
-    reproduccion.h
+    reproduccion.h \
+    ball.h \
+    moveball.h
 
 LIBS += \
     `pkg-config --libs --cflags opencv`
 
 OTHER_FILES += \
-    imagen_color.jpeg
+    imagen_color.jpeg \
+    ball2.png
