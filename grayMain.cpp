@@ -1,49 +1,43 @@
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui/highgui_c.h>
-#include <stdio.h>
+#include "graymaker.h"
 
-using namespace cv;
-
-int main( int argc, char** argv )
+int main(int argc, char *argv[])
 {
-    // argv[1] - where the image is located
-    char* imagePath = argv[1];
+    grayMaker myGraymaker;
 
-    // create a MAT object for input image
-    CvMat image;
+    const char nom_imagen[]= "/home/elda/c++/R-Dannel-Olivaw/imagen_color.jpeg";
 
-    // load an image
-    image = imread( imagePath, 1 );
+    float ancho=0, alto=0, divisiones = 75;
 
-//    if( argc != 2 || !image.data )
-//    {
-//        printf( " No image data \n " );
-//        return -1;
-//    }
+    IplImage * img = cvLoadImage( nom_imagen, CV_LOAD_IMAGE_COLOR);
 
-    // create a MAT object for gray image
-    CvMat gray_image;
+    ancho=img->width/(divisiones*3/2);
+    alto=img->height/divisiones;
 
-    // convert to Greyscale format
-    // cvtColor( image, gray_image, CV_BGR2GRAY );
-    cvtColor( image, gray_image, COLOR_BGR2GRAY );
+    CvRect rect0 = cvRect(0, 0, img->width, img->height);
 
-    // save the transformed image to a file
-    imwrite( "/home/elda/Desktop/GrayImage.jpg", gray_image );
+    myGraymaker.estandariza_imagen(img,rect0);
 
-    // creates two windows
-    namedWindow( imagePath, CV_WINDOW_AUTOSIZE );
-    namedWindow( "Gray image", CV_WINDOW_AUTOSIZE );
+    CvRect rect = cvRect(0, 0, ancho, alto);
 
-    // imshow() displays an image in the specified window.
-    // If the window was created with the CV_WINDOW_AUTOSIZE flag,
-    // the image is shown with its original size
-    imshow( imagePath, image );
-    imshow( "Gray image", gray_image );
+    for(int i=0;i<divisiones;i++)
+    {
+        for(int j=0;j<divisiones*3/2;j++)
+        {
 
-    // wait for key press
-    waitKey(0);
+            rect.x = j*ancho;
+            rect.y = i*alto;
+            cvSetImageROI(img, rect);
+
+            myGraymaker.pinta_sector(img,rect);
+
+            cvResetImageROI(img);
+        }
+    }
+    cvNamedWindow("image", 1);
+    cvShowImage("image", img);
+    cvWaitKey(0);
+    cvDestroyAllWindows();
+    cvReleaseImage(&img);
 
     return 0;
 }
-

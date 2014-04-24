@@ -13,7 +13,8 @@ SOURCES += \
     MainWindow.cpp \
     grayMain.cpp \
     ball.cpp \
-    moveball.cpp
+    moveball.cpp \
+    graymaker.cpp
 
 HEADERS += \
     individuo.h \
@@ -21,7 +22,8 @@ HEADERS += \
     evolucion.h \
     reproduccion.h \
     ball.h \
-    moveball.h
+    moveball.h \
+    graymaker.h
 
 LIBS += \
     `pkg-config --libs --cflags opencv`
